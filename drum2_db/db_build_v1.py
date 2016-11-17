@@ -57,14 +57,13 @@ db.drummers.insert_one(
     }
 )
 
-
+'''
 db.drummers.insert_one(
     {
         "list": "drummer_list",
         "names": ("Steve Gadd", "Buddy Rich", "Chet Carello", "Neil Peart", "Vinnie Colaiuta",  "Carter Beauford")
     }
 )
-'''
 
 
 
@@ -78,7 +77,6 @@ for doc in cur:
 
             #options.append(doc['names'])
 
-print options
 '''
 #print q_list
 #for q in q_list:

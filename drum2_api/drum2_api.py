@@ -11,8 +11,9 @@ from pymongo import MongoClient
 app = Flask(__name__)
 
 #DATASERVER = "http://127.0.0.1:5003"
-client = MongoClient("mongodb://localhost:27017")
-db = client.primer
+
+#client = MongoClient("mongodb://192.168.99.100:27017")
+
 
 
 @app.route("/mess", methods=["POST"])
@@ -51,5 +52,8 @@ def option_list():
 
 
 if __name__ == '__main__':
-    #DATASERVER = os.getenv('data_server')
+    DATASERVER = os.getenv('mongo_server')
+    #client = MongoClient("mongodb://" + DATASERVER)
+    client = MongoClient(DATASERVER)
+    db = client.primer
     app.run(debug=True, host='0.0.0.0', port=int('5002'))

@@ -13,7 +13,7 @@ __author__ = 'cpuskarz'
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
 
-APPSERVER = "http://127.0.0.1:5002"
+#APPSERVER = "http://192.168.99.100:5002"
 
 @app.route('/', methods=["GET"])
 def drummer_list():
@@ -40,5 +40,5 @@ def respick():
 
 
 if __name__ == '__main__':
-    #APPSERVER = os.getenv('app_server')
+    APPSERVER = os.getenv('app_server')
     app.run(debug=False, host='0.0.0.0')
